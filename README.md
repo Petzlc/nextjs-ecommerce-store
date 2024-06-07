@@ -86,10 +86,11 @@ This project should also include tests written for the following functionality:
 - [x] Create a page for the cart
 - [x] Create a navigation with links on the homepage that lead to all the different pages when clicked
 - [x] Create a title for the different pages so that it is shown in the browser
+- [x] Nav should be on every page
 
 - A Products page (where all the products are listed)
 
-  - The header (described below) needs to have a link to the products page with the HTML attribute `data-test-id="products-link"`
+  - [x] The header (described below) needs to have a link to the products page with the HTML attribute `data-test-id="products-link"`
   - [ ] Minimum of 4 different products
   - [x] The page should have a relevant `h1` element
   - [ ] Each product (incl. product name and image) needs to be contained in an anchor element (a link) with an attribute of `data-test-id="product-<product id>"`

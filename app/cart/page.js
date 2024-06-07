@@ -4,5 +4,5 @@ export const metadata = {
 };
 
 export default function CartPage() {
-  return <h1>My Cart page</h1>;
+  return <h1>CartPage</h1>;
 }
