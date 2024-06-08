@@ -1,4 +1,4 @@
-import './globals.scss';
+import './globals.scss'; // was only import './globals.scss'. <h3> in header was directly under the header and no extra <div>
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 
@@ -17,7 +17,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <header>
-          <h1>E-Commerce</h1>
+          <h3>
+            <Link href="/">
+              <picture>
+                <img src="/img/wine-bottle.jpg" alt="wine bottles" width="75" />
+              </picture>
+              Natural Wine Store
+            </Link>
+          </h3>
           <nav>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
