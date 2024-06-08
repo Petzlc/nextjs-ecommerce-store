@@ -42,3 +42,7 @@ nav a {
   padding: 10px;
   border-right: 1px solid #ccc; // thin line between the nav-links.
 }
+
+a:hover {
+  cursor: pointer;
+}

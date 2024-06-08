@@ -4,5 +4,10 @@ export const metadata = {
 };
 
 export default function CartPage() {
-  return <h1>CartPage</h1>;
+  return (
+    <div>
+      <h1>CartPage</h1>
+      <div></div>
+    </div>
+  );
 }

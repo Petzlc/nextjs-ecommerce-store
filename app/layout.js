@@ -36,6 +36,7 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         <main>{children}</main>
+        <footer />
       </body>
     </html>
   );
