@@ -19,7 +19,7 @@ export default function ProductsPage() {
         {products.map((product) => {
           return (
             <div className={styles.productBox} key={`products-${product.id}`}>
-              <div>{product.name}</div>
+              <div className={styles.productName}>{product.name}</div>
               <Image
                 src={`/img/${product.name}.png`}
                 alt={`${product.name}`}
