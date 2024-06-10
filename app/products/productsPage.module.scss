@@ -1,0 +1,12 @@
+.productsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.productBox {
+  border: 1px solid black;
+  border-radius: 2px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
