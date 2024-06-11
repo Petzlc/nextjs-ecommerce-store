@@ -9,6 +9,7 @@ const products = [
     producer: 'Jurtschitsch',
     region: 'Langenlois',
     year: new Date('2022'),
+    price: 19,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const products = [
     producer: 'Zahel',
     region: 'Vienna',
     year: new Date('2022'),
+    price: 17,
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const products = [
     producer: 'Loimer',
     region: 'Langenlois',
     year: new Date('2020'),
+    price: 11,
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const products = [
     producer: 'Claus Preisinger',
     region: 'Gols',
     year: new Date('2022'),
+    price: 14,
   },
 ];
 export const metadata = {
@@ -45,4 +49,8 @@ export const metadata = {
 
 export function getProducts() {
   return products;
+}
+
+export function getProduct(id) {
+  return products.find((product) => product.id === id);
 }

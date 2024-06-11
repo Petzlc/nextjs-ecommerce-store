@@ -31,7 +31,6 @@ export default function ProductsPage() {
         })}
       </div>
     </div>
-
     // <div>
     //   <h1>ProductsPage</h1>
     //   <div className={styles.listProducts}>
