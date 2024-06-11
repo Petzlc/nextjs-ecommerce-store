@@ -1,5 +1,6 @@
 import './globals.scss'; // was only import './globals.scss'. <h3> in header was directly under the header and no extra <div>
 import { Inter } from 'next/font/google';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -36,7 +37,16 @@ export default function RootLayout({ children }) {
               Products
             </Link>{' '}
             {/* Products should be a dropdown products list when hovering*/}
-            <Link href="/cart">Cart</Link>
+            <Link href="/cart" className="cart-img">
+              {/* <Image
+                src="/img/shopping-cart.webp"
+                alt="shopping-cart"
+                width="50"
+                height="50"
+                style={{ marginRight: '2px'}}
+              /> */}
+              Cart
+            </Link>
           </nav>
         </header>
         {Math.floor(Math.random() * 10)}

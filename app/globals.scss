@@ -14,7 +14,7 @@ header {
   align-items: flex-end;
   display: flex;
   justify-content: space-around;
-  background-color: azure;
+  background-color: white;
   text-decoration: none;
   position: relative;
   // padding: 5px;
@@ -39,6 +39,8 @@ nav {
 }
 
 nav a {
+  display: inline-flex;
+  align-items: flex-end;
   padding: 10px;
   border-right: 1px solid #ccc; // thin line between the nav-links.
 }
@@ -46,3 +48,31 @@ nav a {
 a:hover {
   cursor: pointer;
 }
+
+.cart-img {
+  display: inline-flex; /* Use inline-flex for inline display */
+  align-items: flex-end; /* Center the image and text vertically */
+}
+
+// nav a {
+//   display: inline-flex;
+//   align-items: end; /* Center items vertically */
+//   padding: 10px;
+//   border-right: 1px solid #ccc; /* Thin line between the nav-links */
+//   text-decoration: none; /* Optional: remove underline from links */
+//   color: inherit; /* Optional: maintain text color */
+// }
+
+// a:hover {
+//   cursor: pointer;
+// }
+
+// .cart-img {
+//   display: inline-flex; /* Inline-flex for inline display */
+//   align-items: end; /* Center items vertically */
+// }
+
+// .cart-img Image {
+//   vertical-align: bottom; /* Align image middle with text */
+//   margin-right: 8px; /* Optional: space between the image and text */
+// }
