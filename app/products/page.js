@@ -21,7 +21,7 @@ export default function ProductsPage() {
             <div className={styles.productBox} key={`products-${product.id}`}>
               <div className={styles.productName}>{product.name}</div>
               <Image
-                src={`/img/${product.name}.png`}
+                src={`/img/${product.name}.webp`}
                 alt={`${product.name}`}
                 width="53"
                 height="244"

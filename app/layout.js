@@ -20,7 +20,11 @@ export default function RootLayout({ children }) {
           <h3>
             <Link href="/">
               <picture>
-                <img src="/img/wine-bottle.jpg" alt="wine bottles" width="75" />
+                <img
+                  src="/img/wine-bottle.webp"
+                  alt="wine bottles"
+                  width="75"
+                />
               </picture>
               Natural Wine Store
             </Link>
@@ -35,6 +39,7 @@ export default function RootLayout({ children }) {
             <Link href="/cart">Cart</Link>
           </nav>
         </header>
+        {Math.floor(Math.random() * 10)}
         <main>{children}</main>
         <footer />
       </body>
