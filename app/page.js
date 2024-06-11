@@ -1,3 +1,10 @@
+import GenerateButton from './GenerateButton';
+
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div>
+      <GenerateButton />
+      <h1>Home</h1>
+    </div>
+  );
 }
