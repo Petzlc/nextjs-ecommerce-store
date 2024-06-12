@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 // import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import styles from './productsPage.module.scss';
@@ -19,13 +20,15 @@ export default function ProductsPage() {
         {products.map((product) => {
           return (
             <div className={styles.productBox} key={`products-${product.id}`}>
-              <div className={styles.productName}>{product.name}</div>
-              <Image
-                src={`/img/${product.name}.webp`}
-                alt={`${product.name}`}
-                width="53"
-                height="244"
-              />
+              <Link href={`/products/${product.id}`}>
+                <div className={styles.productName}>{product.name}</div>
+                <Image
+                  src={`/img/${product.name}.webp`}
+                  alt={`${product.name}`}
+                  width="53"
+                  height="244"
+                />
+              </Link>
             </div>
           );
         })}
