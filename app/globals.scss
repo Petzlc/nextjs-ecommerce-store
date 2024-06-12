@@ -13,7 +13,7 @@ header {
   width: 100%;
   align-items: flex-end;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: white;
   text-decoration: none;
   position: relative;
@@ -29,6 +29,7 @@ h3 {
   align-self: center;
   justify-content: flex-start;
   padding-left: 5px;
+  margin-left: 100px;
 }
 nav {
   display: flex;
@@ -36,6 +37,7 @@ nav {
   text-decoration: none;
   padding: 15px;
   gap: 50px; // space between the nav-links
+  margin-right: 50px;
 }
 
 nav a {
