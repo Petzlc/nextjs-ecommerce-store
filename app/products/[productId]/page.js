@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getProduct } from '../../../database/products';
+import QuantityButton from '../../QuantityButton';
 
 // import styles from './SingleProductPage.module.scss';
 
@@ -16,10 +17,11 @@ export default function SingleProductPage(props) {
           src={`/img/${singleProduct.name}.webp`}
           alt={`${singleProduct.name}`}
           // className={imageClass}
-          width="159"
-          height="732"
+          width="143" // 53*2,7 //"106" //"159"
+          height="659" // 244*2,7 //"488" //"732"
         />
       </div>
+      <QuantityButton />
     </div>
   );
 }
