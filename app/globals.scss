@@ -1,5 +1,5 @@
 :root {
-  background-color: rgb(170, 252, 197);
+  background-color: white;
   box-sizing: border-box;
 }
 
@@ -14,10 +14,11 @@ header {
   align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  background-color: white;
+  background-color: whitesmoke;
   text-decoration: none;
   position: relative;
   // padding: 5px;
+  border-bottom: 1px #000 solid;
 }
 header picture {
   position: absolute;

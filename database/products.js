@@ -4,41 +4,41 @@ const products = [
   {
     id: 1,
     name: 'Belle Naturelle',
-    variety: 'Grüner Veltliner',
+    variety: 'Gruener Veltliner',
     type: 'White', // red, white, rose
     producer: 'Jurtschitsch',
     region: 'Langenlois',
-    year: new Date('2022'),
+    year: '2022', // no new Date('2022') anymore because a year is not a date for whatever reason. so instead it's going to be a string from now on
     price: 19,
   },
   {
     id: 2,
-    name: 'Ein Wildes Gläschen Rosé',
-    variety: 'Cuvée Rosé',
-    type: 'Rosé', // red, white, rose
+    name: 'Ein Wildes Glaeschen Rose',
+    variety: 'Cuvee Rose',
+    type: 'Rose',
     producer: 'Zahel',
     region: 'Vienna',
-    year: new Date('2022'),
+    year: '2022',
     price: 17,
   },
   {
     id: 3,
     name: 'gluegglich',
-    variety: 'Cuvée White',
-    type: 'White', // red, white, rose
+    variety: 'Cuvee White',
+    type: 'White',
     producer: 'Loimer',
     region: 'Langenlois',
-    year: new Date('2020'),
+    year: '2020',
     price: 11,
   },
   {
     id: 4,
     name: 'Kieselstein',
     variety: 'Zweigelt',
-    type: 'Red', // red, white, rose
+    type: 'Red',
     producer: 'Claus Preisinger',
     region: 'Gols',
-    year: new Date('2022'),
+    year: '2022',
     price: 14,
   },
 ];

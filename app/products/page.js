@@ -29,6 +29,31 @@ export default function ProductsPage() {
                   height="244"
                 />
               </Link>
+              <div className={styles.productDetails}>
+                <p>
+                  <strong>Variety:</strong> {product.variety}
+                </p>
+                <hr />
+                <p>
+                  <strong>Type:</strong> {product.type}
+                </p>
+                <hr />
+                <p>
+                  <strong>Producer:</strong> {product.producer}
+                </p>
+                <hr />
+                <p>
+                  <strong>Region:</strong> {product.region}
+                </p>
+                <hr />
+                <p>
+                  <strong>Year:</strong> {product.year} {/* .getFullYear() */}
+                </p>
+                <hr />
+                <p>
+                  <strong>Price:</strong> {product.price}
+                </p>
+              </div>
             </div>
           );
         })}
