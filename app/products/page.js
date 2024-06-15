@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 // import Link from 'next/link';
-import { getProducts } from '../../database/products';
+import { getProductsInsecure } from '../../database/products';
 import styles from './productsPage.module.scss';
 
 // import styles from '../page.module.scss';
@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default async function ProductsPage() {
-  const products = await getProducts();
+  const products = await getProductsInsecure();
   return (
     <div>
       <h5>This are the products</h5>

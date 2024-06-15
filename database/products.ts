@@ -48,7 +48,7 @@ export const metadata = {
   description: 'This is the products page',
 };
 
-export const getProducts = cache(async () => {
+export const getProductsInsecure = cache(async () => {
   const products = await sql`
   SELECT
     *
@@ -61,11 +61,11 @@ export function getProduct(id) {
   return products.find((product) => product.id === id);
 }
 
-console.log(
-  await sql`
-  SELECT
-    *
-  FROM
-  products
-`,
-);
+// console.log(
+//   await sql`
+//   SELECT
+//     *
+//   FROM
+//   products
+// `,
+// );
