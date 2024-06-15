@@ -83,8 +83,10 @@ export default async function ProductsPage() {
                 <hr
                   style={{ width: '220px', color: '#E6E6E6', marginTop: '7px' }}
                 />
-                <p style={{ marginTop: '7px', textAlign: 'left' }}>
-                  Details &#x1F6C8;
+                <p className={styles.textDetails}>
+                  <Link href={`/products/${product.id}`}>
+                    <span className={styles.hover}>Details &#x1F6C8;</span>
+                  </Link>
                 </p>
               </div>
             </div>

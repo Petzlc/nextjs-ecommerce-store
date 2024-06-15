@@ -56,6 +56,7 @@
 .label {
   font-size: 0.8em;
   font-family: 'Merriweather', serif;
+  color: grey;
 }
 
 .labelPrice {
@@ -79,4 +80,19 @@
   //   right: 0;
   //   width: 100%;
   //   // margin: 10px 0; /* Abstand vor und nach der Linie */
+}
+
+.textDetails {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: left;
+  font-family: 'Palatino Linotype', serif;
+}
+
+.hover {
+  color: #949494;
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
 }
