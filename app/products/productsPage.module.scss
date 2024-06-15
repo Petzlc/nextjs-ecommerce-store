@@ -9,13 +9,74 @@
   text-align: center;
   width: 250px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex; // neu
+  flex-direction: column; // neu
+  align-items: center; // neu
+  position: relative; // achtung neu
 }
 
 .productName {
+  margin-top: 10px;
   font-weight: bold;
+  margin-bottom: 15px;
+}
+
+// .productDetails {
+//   display: flex;
+//   //  margin-bottom: 20px;
+//   //  justify-content: space-between;
+// }
+
+.productPrice {
+  margin-top: 5px;
+  // justify-content: space-around;
+  font-weight: bold;
+}
+
+.imageContainer {
+  // neu
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -5px;
+}
+.euImage {
+  position: relative;
+  bottom: 180px;
+  right: 95px;
   margin-bottom: 3px;
 }
 
 .productDetails {
-  justify-content: space-between;
+  text-align: left;
+  margin-right: 170px;
+  position: relative;
+}
+
+.label {
+  font-size: 0.8em;
+  font-family: 'Merriweather', serif;
+}
+
+.labelPrice {
+  font-size: large;
+  font-weight: bold;
+  font-family: 'Palatino Linotype', serif;
+}
+
+.separator {
+  position: absolute; /* Absolute Positionierung für genaue Platzierung */
+  bottom: 0; /* Position am unteren Rand des .productBox Containers */
+  left: 0; /* Position am linken Rand des .productBox Containers */
+  width: 100%; /* Vollständige Breite des .productBox Containers */
+  border-top: 1px solid #ccc; /* Linien-Stil */
+  margin: 10px 0; /* Abstand ober- und unterhalb der Linie */
+  //   border: 0;
+  //   border-top: 1px solid #ccc; /* Graue Linie */
+  //   position: absolute;
+  //   top: calc(100% + 10px);
+  //   left: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   // margin: 10px 0; /* Abstand vor und nach der Linie */
 }

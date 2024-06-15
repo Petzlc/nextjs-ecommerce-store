@@ -44,16 +44,16 @@ import { sql } from './connect';
 //   },
 // ];
 
-// type Product = {
-//   id: number;
-//   name: string;
-//   variety: string;
-//   type: string;
-//   producer: string;
-//   region: string;
-//   year: string;
-//   price: number;
-// };
+type Product = {
+  id: number;
+  name: string;
+  variety: string;
+  type: string;
+  producer: string;
+  region: string;
+  year: string;
+  price: number;
+};
 
 export const metadata = {
   title: 'Products',
@@ -62,7 +62,7 @@ export const metadata = {
 
 // Displaying the products
 export const getProductsInsecure = cache(async () => {
-  const products = await sql`       {/* <Product[]> */}
+  const products = await sql<Product[]>`
   SELECT
     *
   FROM
@@ -72,8 +72,8 @@ export const getProductsInsecure = cache(async () => {
 });
 
 // Displaying single products
-export const getProductInsecure = cache(async (id /*: number*/) => {
-  const [products] = await sql`         {/* <Product[]> */}
+export const getProductInsecure = cache(async (id: number) => {
+  const [products] = await sql<Product[]>`
   SELECT
     *
   FROM
