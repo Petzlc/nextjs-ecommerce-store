@@ -17,7 +17,10 @@ CREATE TABLE products (
 INSERT INTO products
 (name, variety, type, producer, region, year, price)
 VALUES
-
+  ('Belle Naturelle', 'Gruener Veltliner', 'White', 'Jurtschitsch', 'Langenlois', '2022', '19'),
+  ('Ein Wildes Glaeschen Rose', 'Cuvee Rose', 'Rose', 'Zahel', 'Vienna', '2022', '17'),
+  ('gluegglich', 'Cuvee White', 'White', 'Loimer', 'Langenlois', '2020', '11'),
+  ('Kieselstein', 'Zweigelt', 'Red', 'Claus Preisinger', 'Gols', '2022', '14');
 
 
 

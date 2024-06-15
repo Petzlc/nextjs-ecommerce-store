@@ -1,11 +1,13 @@
 import Image from 'next/image';
-import { getProduct } from '../../../database/products';
+import { getProductInsecure } from '../../../database/products'; // was without Insecure first
 import QuantityButton from '../../QuantityButton';
 
 // import styles from './SingleProductPage.module.scss';
 
-export default function SingleProductPage(props) {
-  const singleProduct = getProduct(Number(props.params.productId));
+export default async function SingleProductPage(props) {
+  const singleProduct = await getProductInsecure(
+    Number(props.params.productId),
+  );
 
   // const for individual style for the single products. it does not work since i can somehow not overwrite the height and width of the <image> element
   // const imageClass = styles[`image${singleProduct.name}`];
