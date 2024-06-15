@@ -1,4 +1,4 @@
-import 'server-only';
+import { sql } from './connect';
 
 const products = [
   {
@@ -54,3 +54,12 @@ export function getProducts() {
 export function getProduct(id) {
   return products.find((product) => product.id === id);
 }
+
+console.log(
+  await sql`
+  SELECT
+    *
+  FROM
+  products
+`,
+);

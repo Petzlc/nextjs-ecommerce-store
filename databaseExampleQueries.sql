@@ -17,3 +17,12 @@ CREATE TABLE products (
 INSERT INTO products
 (name, variety, type, producer, region, year, price)
 VALUES
+
+
+
+
+SELECT * FROM products
+CREATE USER ecommerce WITH ENCRYPTED PASSWORD 'ecommerce';
+GRANT ALL PRIVILEGES ON DATABASE ecommerce TO ecommerce;
+\connect ecommerce;
+CREATE SCHEMA ecommerce AUTHORIZATION ecommerce
