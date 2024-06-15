@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { sql } from './connect';
 
 const products = [
@@ -47,7 +48,7 @@ export const metadata = {
   description: 'This is the products page',
 };
 
-export async function getProducts() {
+export const getProducts = cache(async () => {
   const products = await sql`
   SELECT
     *
@@ -55,8 +56,7 @@ export async function getProducts() {
   products
 `;
   return products;
-}
-
+});
 export function getProduct(id) {
   return products.find((product) => product.id === id);
 }
