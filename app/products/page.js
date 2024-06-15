@@ -11,8 +11,8 @@ export const metadata = {
   description: 'This is the products page',
 };
 
-export default function ProductsPage() {
-  const products = getProducts();
+export default async function ProductsPage() {
+  const products = await getProducts();
   return (
     <div>
       <h5>This are the products</h5>
