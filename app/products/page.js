@@ -15,7 +15,7 @@ export default async function ProductsPage() {
   const products = await getProductsInsecure();
   return (
     <div>
-      <h5>These are the products</h5>
+      <h5 className={styles.headerText}>These are the products</h5>
       <div className={styles.productsContainer}>
         {products.map((product) => {
           return (
