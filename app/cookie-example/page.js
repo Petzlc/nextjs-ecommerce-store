@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import SetCookieForm from './SetCookieForm';
 
 export default function SetCookiePage() {
   // Get the cookies with a value of a string
@@ -13,7 +14,9 @@ export default function SetCookiePage() {
   // const test = JSON.parse(testCookieValue.value);
   return (
     <>
-      <div>Cookie Value: </div>
+      {/* display cookie with testCookie.value */}
+      <div>Cookie Value: {testCookieValue.value}</div>
+      <SetCookieForm />
     </>
   );
 }
