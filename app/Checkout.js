@@ -3,6 +3,17 @@ import { useState } from 'react';
 
 export default function CheckoutForm() {
   const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
+  const [zipCode, setZipCode] = useState();
+  const [street, setStreet] = useState('');
+  const [streetNumber, setStreetNumber] = useState();
+  const [doorNumber, setDoorNumber] = useState();
+  const [creditCardNumber, setCreditCardNumber] = useState();
+  const [cvvCode, setCvvCode] = useState();
+  const [expiryDate, setExpiryDate] = useState();
+
   return (
     <div>
       <h1>Checkout Page</h1>
@@ -19,7 +30,7 @@ export default function CheckoutForm() {
         <label>
           <input
             value={lastName}
-            onChange={(event) => setlastName(event.currentTarget.value)}
+            onChange={(event) => setLastName(event.currentTarget.value)}
             placeholder="Last name"
           />
         </label>
@@ -57,41 +68,50 @@ export default function CheckoutForm() {
           />
         </label>
         {/* streetnumber */}
-        <label>
+        {/* <label>
           <input
             type={Number}
             value={streetNumber}
             onChange={(event) => setStreetNumber(event.currentTarget.value)}
             placeholder="Street number"
           />
-        </label>
+        </label> */}
         {/* doornumber */}
-        <label>
+        {/* <label>
           <input
             type={Number}
             value={doorNumber}
             onChange={(event) => setDoorNumber(event.currentTarget.value)}
             placeholder="Door number"
           />
-        </label>
+        </label> */}
         {/* creditcard: cardnumber*/}
-        <label>
+        {/* <label>
           <input
             type={Number}
             value={creditCardNumber}
             onChange={(event) => setCreditCardNumber(event.currentTarget.value)}
             placeholder="Credit card number"
           />
+        </label> */}
+        {/* cvv code */}
+        <label>
+          <input
+            type={Number}
+            value={cvvCode}
+            onChange={(event) => setCvvCode(event.currentTarget.value)}
+            placeholder="CVV Code"
+          />
         </label>
         {/* Date of expiry */}
-        <label>
+        {/* <label>
           <input
             type={Date}
             value={expiryDate}
             onChange={(event) => setExpiryDate(event.currentTarget.value)}
             placeholder="Expiry date"
           />
-        </label>
+        </label> */}
       </form>
     </div>
   );
