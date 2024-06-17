@@ -1,6 +1,11 @@
 'use client';
 import { useState } from 'react';
 
+export const metadata = {
+  title: 'Checkout',
+  description: 'This is the checkout page',
+};
+
 export default function CheckoutForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -68,32 +73,32 @@ export default function CheckoutForm() {
           />
         </label>
         {/* streetnumber */}
-        {/* <label>
+        <label>
           <input
             type={Number}
             value={streetNumber}
             onChange={(event) => setStreetNumber(event.currentTarget.value)}
             placeholder="Street number"
           />
-        </label> */}
+        </label>
         {/* doornumber */}
-        {/* <label>
+        <label>
           <input
             type={Number}
             value={doorNumber}
             onChange={(event) => setDoorNumber(event.currentTarget.value)}
             placeholder="Door number"
           />
-        </label> */}
+        </label>
         {/* creditcard: cardnumber*/}
-        {/* <label>
+        <label>
           <input
             type={Number}
             value={creditCardNumber}
             onChange={(event) => setCreditCardNumber(event.currentTarget.value)}
             placeholder="Credit card number"
           />
-        </label> */}
+        </label>
         {/* cvv code */}
         <label>
           <input
@@ -104,14 +109,14 @@ export default function CheckoutForm() {
           />
         </label>
         {/* Date of expiry */}
-        {/* <label>
+        <label>
           <input
             type={Date}
             value={expiryDate}
             onChange={(event) => setExpiryDate(event.currentTarget.value)}
             placeholder="Expiry date"
           />
-        </label> */}
+        </label>
       </form>
     </div>
   );

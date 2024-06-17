@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function QuantityButton() {
   // State to manage the quantity of the product, default value 0
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   // Function to increment the quantity by 1
   const handleIncrement = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);

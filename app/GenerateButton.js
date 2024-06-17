@@ -8,7 +8,7 @@ export default function GenerateButton() {
   const [color, setColor] = useState('');
   const router = useRouter();
 
-  // document.cookie (don't use it, it's an antipatern. Just to showcase)
+  // document.cookie (don't use it, it's an anti-pattern. Just to showcase)
   useEffect(() => {
     // DON'T USE document.cookie
     // DON'T USE document.cookie (because of cross-side-script Attack. We use an API instead)
