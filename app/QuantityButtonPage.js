@@ -2,9 +2,10 @@
 import { useState } from 'react';
 import { createOrUpdateCookie } from './products/[productId]/action';
 
-export default function QuantityButton({ productId }) {
+export default function QuantityButtonPage({ productId }) {
   // State to manage the quantity of the product, default value 0
   const [quantity, setQuantity] = useState(1);
+  // const [quantityCookie, setQuantityCookie] = useState(0);
 
   // State to add quantity to cart
   //const [addQuantity, setAddQuantity] = useState(0);
@@ -25,7 +26,7 @@ export default function QuantityButton({ productId }) {
 
   const handleAddToCart = async () => {
     await createOrUpdateCookie(productId, quantity);
-    alert(`Added ${quantity} to cart`);
+    alert(`Added ${quantity} of product ${productId} to cart`);
   };
   return (
     <div>
@@ -43,7 +44,11 @@ export default function QuantityButton({ productId }) {
           min="0"
           step="1"
         />
-        <button onClick={handleAddToCart}>Add to cart</button>
+        <button
+          onClick={handleAddToCart} // {async () => await createOrUpdateCookie(quantityCookie)}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );
