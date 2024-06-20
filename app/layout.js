@@ -39,7 +39,7 @@ export default async function RootLayout({ children }) {
                   width="75"
                 />
               </picture>
-              Natural Wine Store
+              <div className="titlestyle">Natural Wine Store</div>
             </Link>
           </h3>
           <nav>
@@ -57,7 +57,10 @@ export default async function RootLayout({ children }) {
                 height="50"
                 style={{ marginRight: '2px'}}
               /> */}
-              {totalItemsInCart > 0 && `${totalItemsInCart}`} Cart
+              {totalItemsInCart > 0 && (
+                <div className="productnumber">{totalItemsInCart}</div>
+              )}
+              Cart
             </Link>
           </nav>
         </header>
