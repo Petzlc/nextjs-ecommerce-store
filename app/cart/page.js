@@ -35,6 +35,12 @@ export default async function CartPage() {
     0,
   );
 
+  // save the price in a cookie first try
+  // cookies().set('totalPriceCookie', JSON.stringify(totalPrice));
+
+  // save total price in a cookie second try
+  // document.cookie = `totalPriceCookie=${JSON.stringify(totalPrice)}; path=/`;
+
   return (
     <div>
       <h1>CartPage</h1>
