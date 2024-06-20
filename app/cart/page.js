@@ -70,9 +70,9 @@ export default async function CartPage() {
       <div>
         <h2>Total Price: {totalPrice.toFixed(2)}</h2>
       </div>
-      <Link href="/CheckoutForm">
+      {/* <Link href="/CheckoutForm">
         <button>Go to Checkout</button>
-      </Link>
+      </Link> */}
       <CheckoutButtonReal />
       {/* <Checkout /> */}
       {/* <CheckoutButton /> */}
