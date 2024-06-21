@@ -68,7 +68,7 @@ export default async function RootLayout({ children }) {
         <main className="main-container">
           <div className="background-image-container">
             <Image
-              src="/img/Background_winesymbols.webp"
+              src="/img/Abstract_vineyard.webp"
               className="background-image"
               alt="background picture"
               // width="100"
