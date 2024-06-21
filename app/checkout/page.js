@@ -13,7 +13,7 @@ export default function CheckoutPage() {
   // const totalPrice = totalPriceCookie ? JSON.parse(totalPriceCookie.value) : 0;
   return (
     <div>
-      <h1>This is the Checkout Form</h1>
+      {/* <h1>This is the Checkout Form</h1> */}
       <div>
         <CheckoutForm />
       </div>
