@@ -64,8 +64,22 @@ export default async function RootLayout({ children }) {
             </Link>
           </nav>
         </header>
-        {Math.floor(Math.random() * 10)}
-        <main>{children}</main>
+        {/* {Math.floor(Math.random() * 10)} */}
+        <main className="main-container">
+          <div className="background-image-container">
+            <Image
+              src="/img/Background_winesymbols.webp"
+              className="background-image"
+              alt="background picture"
+              // width="100"
+              // height="100"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top"
+            />
+          </div>
+          {children}
+        </main>
         <footer />
       </body>
     </html>
