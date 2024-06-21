@@ -17,8 +17,18 @@ export default function Home() {
         </p>
       </div>
       <div className={styles.section}>
-        <div className={styles.imageContainer}>
-          <Image />
+        <div className={styles.imageContainerLeft}>
+          <Image
+            src="/img/Winefillup.webp"
+            alt="Wine fill up"
+            width="700"
+            height="350"
+            style={{
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              objectFit: 'cover',
+            }}
+          />
         </div>
         <div className={styles.textContainer}>
           <p>
@@ -27,15 +37,25 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className={styles.sectionReverse}>
+      <div className={styles.section}>
         <div className={styles.textContainer}>
           <p>
             Austria is renowned for its diverse wine regions, offering a variety
             of unique natural wines.
           </p>
         </div>
-        <div className={styles.imageContainer}>
-          <Image />
+        <div className={styles.imageContainerRight}>
+          <Image
+            src="/img/Vinyards.webp"
+            alt="Vinyards"
+            width="700"
+            height="350"
+            style={{
+              borderRadius: '5px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              objectFit: 'cover',
+            }}
+          />
         </div>
       </div>
     </div>
