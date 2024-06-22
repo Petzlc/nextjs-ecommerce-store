@@ -1,4 +1,5 @@
 import { cache } from 'react';
+import { Product } from '../migrations/00000-createTableProducts';
 import { sql } from './connect';
 
 // const products = [
@@ -44,16 +45,16 @@ import { sql } from './connect';
 //   },
 // ];
 
-type Product = {
-  id: number;
-  name: string;
-  variety: string;
-  type: string;
-  producer: string;
-  region: string;
-  year: string;
-  price: number;
-};
+// type Product = {
+//   id: number;
+//   name: string;
+//   variety: string;
+//   type: string;
+//   producer: string;
+//   region: string;
+//   year: string;
+//   price: number;
+// };
 
 export const metadata = {
   title: 'Products',
