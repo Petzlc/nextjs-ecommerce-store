@@ -1,5 +1,6 @@
 // import { cookies } from 'next/headers.js';
 // import { useState } from 'react';
+import Link from 'next/link';
 import CheckoutForm from './CheckoutForm.js';
 
 export const metadata = {
@@ -16,6 +17,14 @@ export default function CheckoutPage() {
       {/* <h1>This is the Checkout Form</h1> */}
       <div>
         <CheckoutForm />
+      </div>
+      <br />
+      <div>
+        <Link href="/cart">Back to the Cart</Link>
+      </div>
+      <br />
+      <div>
+        <Link href="/">Back to Homepage</Link>
       </div>
       {/* <div>
         <h2>Total Price: {totalPrice.toFixed(2)}</h2>

@@ -56,10 +56,10 @@ import { sql } from './connect';
 //   price: number;
 // };
 
-export const metadata = {
-  title: 'Products',
-  description: 'This is the products page',
-};
+// export const metadata = {
+//   title: 'Products',
+//   description: 'This is the products page',
+// };
 
 // Displaying the products
 export const getProductsInsecure = cache(async () => {
@@ -78,8 +78,9 @@ export const getProductInsecure = cache(async (id: number) => {
   SELECT
     *
   FROM
-  products
-  WHERE id = ${id}
+    products
+  WHERE
+    id = ${id}
 `;
   return products;
 });

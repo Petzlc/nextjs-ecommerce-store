@@ -25,7 +25,8 @@ VALUES
 
 
 SELECT * FROM products
+CREATE DATABASE ecommerce;
 CREATE USER ecommerce WITH ENCRYPTED PASSWORD 'ecommerce';
 GRANT ALL PRIVILEGES ON DATABASE ecommerce TO ecommerce;
 \connect ecommerce;
-CREATE SCHEMA ecommerce AUTHORIZATION ecommerce
+CREATE SCHEMA ecommerce AUTHORIZATION ecommerce;

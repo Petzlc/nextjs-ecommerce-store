@@ -1,15 +1,18 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import styles from './checkOut.module.scss';
 
-export const metadata = {
-  title: 'Checkout',
-  description: 'This is the checkout page',
-};
+// export const metadata = {
+//   title: 'Checkout',
+//   description: 'This is the checkout page',
+// };
 
 export default function CheckoutForm() {
+  const router = useRouter;
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [zipCode, setZipCode] = useState();
@@ -19,6 +22,23 @@ export default function CheckoutForm() {
   const [creditCardNumber, setCreditCardNumber] = useState();
   const [cvvCode, setCvvCode] = useState();
   const [expiryDate, setExpiryDate] = useState();
+
+  function clearAllInputFields() {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setCountry('');
+    setCity('');
+    setZipCode('');
+    setStreet('');
+    setStreetNumber('');
+    setDoorNumber('');
+    setCreditCardNumber('');
+    setCvvCode('');
+    setExpiryDate('');
+
+    router.push('/thank-you');
+  }
 
   return (
     <div className={styles.formContainer}>
@@ -31,6 +51,7 @@ export default function CheckoutForm() {
               value={firstName}
               onChange={(event) => setFirstName(event.currentTarget.value)}
               placeholder="First name"
+              required
             />
           </label>
           {/* Last name */}
@@ -39,6 +60,7 @@ export default function CheckoutForm() {
               value={lastName}
               onChange={(event) => setLastName(event.currentTarget.value)}
               placeholder="Last name"
+              required
             />
           </label>
         </div>
@@ -50,6 +72,7 @@ export default function CheckoutForm() {
               value={country}
               onChange={(event) => setCountry(event.currentTarget.value)}
               placeholder="Country"
+              required
             />
           </label>
 
@@ -60,6 +83,7 @@ export default function CheckoutForm() {
               value={city}
               onChange={(event) => setCity(event.currentTarget.value)}
               placeholder="City"
+              required
             />
           </label>
         </div>
@@ -72,6 +96,7 @@ export default function CheckoutForm() {
               value={zipCode}
               onChange={(event) => setZipCode(event.currentTarget.value)}
               placeholder="zip code"
+              required
             />
           </label>
           {/* street */}
@@ -81,6 +106,7 @@ export default function CheckoutForm() {
               value={street}
               onChange={(event) => setStreet(event.currentTarget.value)}
               placeholder="Street"
+              required
             />
           </label>
           {/* streetnumber */}
@@ -93,6 +119,7 @@ export default function CheckoutForm() {
               value={streetNumber}
               onChange={(event) => setStreetNumber(event.currentTarget.value)}
               placeholder="Street number"
+              required
             />
           </label>
           {/* doornumber */}
@@ -103,6 +130,7 @@ export default function CheckoutForm() {
               value={doorNumber}
               onChange={(event) => setDoorNumber(event.currentTarget.value)}
               placeholder="Door number"
+              required
             />
           </label>
           {/* creditcard: cardnumber*/}
@@ -117,6 +145,7 @@ export default function CheckoutForm() {
                 setCreditCardNumber(event.currentTarget.value)
               }
               placeholder="Credit card number"
+              required
             />
           </label>
           {/* cvv code */}
@@ -127,10 +156,11 @@ export default function CheckoutForm() {
               value={cvvCode}
               onChange={(event) => setCvvCode(event.currentTarget.value)}
               placeholder="CVV Code"
+              required
             />
           </label>
           {/* Date of expiry */}
-          </div>
+        </div>
         <div className={styles.inputGroup}>
           <label className={styles.label}>
             <input
@@ -139,9 +169,31 @@ export default function CheckoutForm() {
               value={expiryDate}
               onChange={(event) => setExpiryDate(event.currentTarget.value)}
               placeholder="Expiry date"
+              required
             />
           </label>
         </div>
+        <br />
+        <br />
+        <button
+          onClick={clearAllInputFields}
+          disabled={
+            !firstName ||
+            !lastName ||
+            !email ||
+            !country ||
+            !city ||
+            !zipCode ||
+            !street ||
+            !streetNumber ||
+            !doorNumber ||
+            !creditCardNumber ||
+            !cvvCode ||
+            !expiryDate
+          }
+        >
+          Confirm Order
+        </button>
       </form>
     </div>
   );
