@@ -4,7 +4,6 @@ import { cookies } from 'next/headers'; // Test
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products'; // Test
-import { setTotalPriceCookie } from '../../util/cookies';
 import styles from './cartPage.module.scss';
 import CheckoutButtonReal from './CheckoutButtonForm';
 
@@ -36,8 +35,6 @@ export default async function CartPage() {
     (total, item) => total + item.totalPrice,
     0,
   );
-
-  setTotalPriceCookie(totalPrice);
 
   // cookies().set({
   //   //     // Unhandled Runtime Error

@@ -7,10 +7,3 @@ export function getCookie(name: string) {
   }
   return cookie.value;
 }
-
-export function setTotalPriceCookie(totalPrice: number) {
-  const cookieStore = cookies();
-  cookieStore.set('totalPriceCookie', JSON.stringify(totalPrice), {
-    path: '/',
-  });
-}
