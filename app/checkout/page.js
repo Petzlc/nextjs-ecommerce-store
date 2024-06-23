@@ -1,4 +1,4 @@
-// import { cookies } from 'next/headers.js';
+import { cookies } from 'next/headers.js';
 // import { useState } from 'react';
 import Link from 'next/link';
 import CheckoutForm from './CheckoutForm.js';
@@ -10,10 +10,11 @@ export const metadata = {
 
 export default function CheckoutPage() {
   // call the total price from the cookies
-  // const totalPriceCookie = cookies().get('totalPriceCookie');
-  // const totalPrice = totalPriceCookie ? JSON.parse(totalPriceCookie.value) : 0;
+  const totalPriceCookie = cookies().get('totalPriceCookie');
+  const totalPrice = totalPriceCookie ? JSON.parse(totalPriceCookie.value) : 0;
   return (
     <div>
+      <h2>Total Price: {totalPrice.toFixed(2)}</h2>
       {/* <h1>This is the Checkout Form</h1> */}
       <div>
         <CheckoutForm />

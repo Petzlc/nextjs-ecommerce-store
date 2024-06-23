@@ -4,6 +4,7 @@ import { cookies } from 'next/headers'; // Test
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products'; // Test
+import { setTotalPriceCookie } from '../../util/cookies';
 import styles from './cartPage.module.scss';
 import CheckoutButtonReal from './CheckoutButtonForm';
 
@@ -35,6 +36,17 @@ export default async function CartPage() {
     (total, item) => total + item.totalPrice,
     0,
   );
+
+  setTotalPriceCookie(totalPrice);
+
+  // cookies().set({
+  //   //     // Unhandled Runtime Error
+
+  //   // // Error: Cookies can only be modified in a Server Action or Route Handler. Read more: https://nextjs.org/docs/app/api-reference/functions/cookies#cookiessetname-value-options
+  //   name: 'totalPriceCookie',
+  //   value: JSON.stringify(totalPrice),
+  //   path: '/',
+  // });
 
   // save the price in a cookie first try
   // cookies().set('totalPriceCookie', JSON.stringify(totalPrice));
