@@ -8,12 +8,12 @@ export const metadata = {
 export default function ThankYouPage() {
   return (
     <div>
-      <h1>Thank You For Your Purchase!</h1>
+      <h1>Thank You For Your Order!</h1>
       <br />
       <p>Enjoy the products and come back soon!</p>
       <br />
       <button>
-        <Link href="/">Back to the Home Page</Link>
+        <Link href="/">Back to Home</Link>
       </button>
       <br />
       <button>

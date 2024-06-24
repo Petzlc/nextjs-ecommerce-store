@@ -1,28 +1,62 @@
+/* Styles für das gesamte Checkout-Formular */
 .formContainer {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+  max-width: 600px; /* Begrenzte Breite */
+  margin: 0 auto; /* Zentrierung */
+  padding: 20px; /* Innenabstand */
+  background: rgba(211, 211, 211, 0.8); /* Grauer Hintergrund mit Opazität */
+  border: 1px solid #ccc; /* Graue Umrandung */
+  border-radius: 8px; /* Abgerundete Ecken */
+  text-align: center; /* Textzentrierung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
 }
 
+/* Gruppe der Eingabefelder mit einheitlichem Abstand */
 .inputGroup {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+  flex-direction: column; /* Stapeln der Felder vertikal */
+  gap: 10px; /* Abstand zwischen den Eingabefeldern */
+  margin-bottom: 15px; /* Abstand nach unten */
 }
 
+/* Einheitliche Gestaltung für Labels */
 .label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  text-align: left;
+  display: flex; /* Flexbox für einfaches Layout */
+  flex-direction: column; /* Vertikale Anordnung von Text und Eingabefeld */
+  align-items: flex-start; /* Linksbündige Ausrichtung */
+  font-size: 14px; /* Schriftgröße */
+  margin-bottom: 5px; /* Abstand zum nächsten Element */
+  width: 100%; /* Volle Breite */
 }
 
+/* Einheitliche Eingabefelder */
 .inputField {
-  width: calc(50% - 10px); /* 50% Breite minus 10px Abstand */
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  width: 100%; /* Volle Breite innerhalb des Containers */
+  padding: 10px; /* Innenabstand */
+  font-size: 14px; /* Schriftgröße */
+  border: 1px solid #ccc; /* Graue Umrandung */
+  border-radius: 4px; /* Abgerundete Ecken */
+  box-sizing: border-box; /* Box-Sizing für bessere Kontrolle */
+  background: #fff; /* Weißer Hintergrund */
+  margin-top: 5px; /* Abstand nach oben */
+}
+
+/* Stil für den Bestätigungsbutton */
+.confirmButton {
+  padding: 10px 20px; /* Innenabstand */
+  font-size: 16px; /* Schriftgröße */
+  background: #007bff; /* Blaue Hintergrundfarbe */
+  color: white; /* Weiße Schriftfarbe */
+  border: none; /* Keine Umrandung */
+  border-radius: 4px; /* Abgerundete Ecken */
+  cursor: pointer; /* Zeiger als Mauszeiger */
+  transition: background-color 0.3s; /* Weicher Übergang für Hintergrundfarbe */
+}
+
+.confirmButton:disabled {
+  background: #ccc; /* Graue Hintergrundfarbe bei deaktiviertem Button */
+  cursor: not-allowed; /* Nicht erlaubtes Symbol als Mauszeiger */
+}
+
+.confirmButton:not(:disabled):hover {
+  background: #0056b3; /* Dunklere Blautönung bei Hover */
 }

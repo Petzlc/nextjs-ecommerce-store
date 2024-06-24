@@ -1,15 +1,12 @@
 'use client';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './checkOut.module.scss';
 
-// export const metadata = {
-//   title: 'Checkout',
-//   description: 'This is the checkout page',
-// };
-
 export default function CheckoutForm() {
   const router = useRouter;
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -40,6 +37,21 @@ export default function CheckoutForm() {
     router.push('/thank-you');
   }
 
+  // check if every input field is filled out
+  const isFormComplete =
+    firstName &&
+    lastName &&
+    email &&
+    country &&
+    city &&
+    zipCode &&
+    street &&
+    streetNumber &&
+    doorNumber &&
+    creditCardNumber &&
+    cvvCode &&
+    expiryDate;
+
   return (
     <div className={styles.formContainer}>
       <h1>Checkout Page</h1>
@@ -47,7 +59,9 @@ export default function CheckoutForm() {
         {/* First name */}
         <div className={styles.inputGroup}>
           <label className={styles.label}>
+            First Name:
             <input
+              className={styles.inputField}
               value={firstName}
               onChange={(event) => setFirstName(event.currentTarget.value)}
               placeholder="First name"
@@ -56,7 +70,9 @@ export default function CheckoutForm() {
           </label>
           {/* Last name */}
           <label className={styles.label}>
+            Last Name:
             <input
+              className={styles.inputField}
               value={lastName}
               onChange={(event) => setLastName(event.currentTarget.value)}
               placeholder="Last name"
@@ -65,8 +81,23 @@ export default function CheckoutForm() {
           </label>
         </div>
         <div className={styles.inputGroup}>
+          {/* Email */}
+          <label className={styles.label}>
+            Email:
+            <input
+              className={styles.inputField}
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.currentTarget.value)}
+              placeholder="Email"
+              required
+            />
+          </label>
+        </div>
+        <div className={styles.inputGroup}>
           {/* Adress: Country */}
-          <label className={styles.inputGroup}>
+          <label className={styles.label}>
+            Country:
             <input
               className={styles.inputField}
               value={country}
@@ -78,6 +109,7 @@ export default function CheckoutForm() {
 
           {/* city */}
           <label className={styles.label}>
+            City:
             <input
               className={styles.inputField}
               value={city}
@@ -90,6 +122,7 @@ export default function CheckoutForm() {
         <div className={styles.inputGroup}>
           {/* zip code */}
           <label className={styles.label}>
+            Zip Code:
             <input
               className={styles.inputField}
               type={Number}
@@ -101,6 +134,7 @@ export default function CheckoutForm() {
           </label>
           {/* street */}
           <label className={styles.label}>
+            Street:
             <input
               className={styles.inputField}
               value={street}
@@ -113,6 +147,7 @@ export default function CheckoutForm() {
         </div>
         <div className={styles.inputGroup}>
           <label className={styles.label}>
+            Street Number:
             <input
               className={styles.inputField}
               type={Number}
@@ -124,6 +159,8 @@ export default function CheckoutForm() {
           </label>
           {/* doornumber */}
           <label className={styles.label}>
+            {' '}
+            Door Number:
             <input
               className={styles.inputField}
               type={Number}
@@ -137,6 +174,7 @@ export default function CheckoutForm() {
         </div>
         <div className={styles.inputGroup}>
           <label className={styles.label}>
+            Credit Card Number:
             <input
               className={styles.inputField}
               type={Number}
@@ -144,12 +182,13 @@ export default function CheckoutForm() {
               onChange={(event) =>
                 setCreditCardNumber(event.currentTarget.value)
               }
-              placeholder="Credit card number"
+              placeholder="Credit Card Number"
               required
             />
           </label>
           {/* cvv code */}
           <label className={styles.label}>
+            CVV Code:
             <input
               className={styles.inputField}
               type={Number}
@@ -161,39 +200,45 @@ export default function CheckoutForm() {
           </label>
           {/* Date of expiry */}
         </div>
-        <div className={styles.inputGroup}>
-          <label className={styles.label}>
-            <input
-              className={styles.inputField}
-              type={Date}
-              value={expiryDate}
-              onChange={(event) => setExpiryDate(event.currentTarget.value)}
-              placeholder="Expiry date"
-              required
-            />
-          </label>
-        </div>
+        {/* <div className={styles.inputGroup}> */}
+        <label className={styles.label}>
+          Date of Expiry:
+          <input
+            className={styles.inputField}
+            type={Date}
+            value={expiryDate}
+            onChange={(event) => setExpiryDate(event.currentTarget.value)}
+            placeholder="Expiry date"
+            required
+          />
+        </label>
+        {/* </div> */}
         <br />
         <br />
-        <button
-          onClick={clearAllInputFields}
-          disabled={
-            !firstName ||
-            !lastName ||
-            !email ||
-            !country ||
-            !city ||
-            !zipCode ||
-            !street ||
-            !streetNumber ||
-            !doorNumber ||
-            !creditCardNumber ||
-            !cvvCode ||
-            !expiryDate
-          }
-        >
-          Confirm Order
-        </button>
+        <Link href="/thankyou">
+          <button
+            className="confirmButton"
+            type="button"
+            onClick={clearAllInputFields}
+            disabled={!isFormComplete}
+            // disabled={
+            //   !firstName ||
+            //   !lastName ||
+            //   !email ||
+            //   !country ||
+            //   !city ||
+            //   !zipCode ||
+            //   !street ||
+            //   !streetNumber ||
+            //   !doorNumber ||
+            //   !creditCardNumber ||
+            //   !cvvCode ||
+            //   !expiryDate
+            // }
+          >
+            Confirm Order
+          </button>
+        </Link>
       </form>
     </div>
   );

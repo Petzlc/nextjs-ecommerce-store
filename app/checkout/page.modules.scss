@@ -1,0 +1,24 @@
+.buttonContainer {
+  // display: flex;
+  // justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  // margin-left: 100px;
+}
+
+/* Stil für den Keep Shopping Button */
+.shoppingButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.shoppingButton:hover {
+  background: #0056b3;
+}

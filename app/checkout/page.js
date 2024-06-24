@@ -1,8 +1,8 @@
 import { cookies } from 'next/headers.js';
-// import { useState } from 'react';
 import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products';
 import CheckoutForm from './CheckoutForm.js';
+import styles from './page.modules.scss';
 
 export const metadata = {
   title: 'Checkout',
@@ -10,10 +10,6 @@ export const metadata = {
 };
 
 export default async function CheckoutPage() {
-  // call the total price from the cookies
-  // const totalPriceCookie = cookies().get('totalPriceCookie');
-  // const totalPrice = totalPriceCookie ? JSON.parse(totalPriceCookie.value) : 0;
-
   const cartCookie = cookies().get('addQuantityCookie');
   const cartItems = cartCookie ? JSON.parse(cartCookie.value) : [];
 
@@ -38,23 +34,23 @@ export default async function CheckoutPage() {
 
   return (
     <div>
-      <h2>Total Price: {totalPrice.toFixed(2)}</h2>
-      {/* <h2>Total Price: {totalPrice.toFixed(2)}</h2> */}
-      {/* <h1>This is the Checkout Form</h1> */}
       <div>
+        <h2 style={{ textAlign: 'center' }}>
+          Total Price: {totalPrice.toFixed(2)}
+        </h2>
+        <div className={styles.buttonContainer}>
+          <Link href="/products">
+            <button className={styles.shoppingButton}>Keep shopping</button>
+          </Link>
+        </div>
         <CheckoutForm />
       </div>
       <br />
-      <div>
-        <Link href="/cart">Back to the Cart</Link>
-      </div>
-      <br />
-      <div>
-        <Link href="/">Back to Homepage</Link>
-      </div>
       {/* <div>
-        <h2>Total Price: {totalPrice.toFixed(2)}</h2>
+        <Link href="/products">Keep shopping</Link>
       </div> */}
+      <br />
+      <div>{/* <h2>Total Price: {totalPrice.toFixed(2)}</h2> */}</div>
     </div>
   );
 }
