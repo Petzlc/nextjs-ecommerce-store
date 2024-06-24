@@ -47,16 +47,8 @@ export default async function RootLayout({ children }) {
             <Link href="/about">About</Link>
             <Link href="/products" data-test-id="products-link">
               Products
-            </Link>{' '}
-            {/* Products should be a dropdown products list when hovering*/}
+            </Link>
             <Link href="/cart" className="cart-img">
-              {/* <Image
-                src="/img/shopping-cart.webp"
-                alt="shopping-cart"
-                width="50"
-                height="50"
-                style={{ marginRight: '2px'}}
-              /> */}
               {totalItemsInCart > 0 && (
                 <div className="productnumber">{totalItemsInCart}</div>
               )}
@@ -64,15 +56,13 @@ export default async function RootLayout({ children }) {
             </Link>
           </nav>
         </header>
-        {/* {Math.floor(Math.random() * 10)} */}
+
         <main className="main-container">
           <div className="background-image-container">
             <Image
               src="/img/glasswine3.webp"
               className="background-image"
               alt="background picture"
-              // width="100"
-              // height="100"
               layout="fill"
               objectFit="cover"
               objectPosition="top"

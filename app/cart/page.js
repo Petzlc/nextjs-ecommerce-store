@@ -1,5 +1,3 @@
-// import Checkout from '../checkout.js';
-// import CheckoutButton from '../CheckoutButton.js';
 import { cookies } from 'next/headers'; // Test
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,14 +11,14 @@ export const metadata = {
 };
 
 export default async function CartPage() {
-  // read out the Cookies         // test
+  // read out the Cookies
   const cartCookie = cookies().get('addQuantityCookie');
   const cartItems = cartCookie ? JSON.parse(cartCookie.value) : [];
 
-  // getting product details    // test
+  // getting product details
   const allProducts = await getProductsInsecure();
 
-  // getting the products in the cart   // test
+  // getting the products in the cart
   const productsInCart = cartItems.map((item) => {
     const product = allProducts.find((product) => product.id === item.id);
     return {
@@ -30,26 +28,11 @@ export default async function CartPage() {
     };
   });
 
-  // total costs      // test
+  // total costs
   const totalPrice = productsInCart.reduce(
     (total, item) => total + item.totalPrice,
     0,
   );
-
-  // cookies().set({
-  //   //     // Unhandled Runtime Error
-
-  //   // // Error: Cookies can only be modified in a Server Action or Route Handler. Read more: https://nextjs.org/docs/app/api-reference/functions/cookies#cookiessetname-value-options
-  //   name: 'totalPriceCookie',
-  //   value: JSON.stringify(totalPrice),
-  //   path: '/',
-  // });
-
-  // save the price in a cookie first try
-  // cookies().set('totalPriceCookie', JSON.stringify(totalPrice));
-
-  // save total price in a cookie second try
-  // document.cookie = `totalPriceCookie=${JSON.stringify(totalPrice)}; path=/`;
 
   return (
     <div className={styles.container}>
@@ -89,12 +72,7 @@ export default async function CartPage() {
       <div className={styles.totalPrice}>
         <h2>Total Price: {totalPrice.toFixed(2)}</h2>
       </div>
-      {/* <Link href="/CheckoutForm">
-        <button>Go to Checkout</button>
-      </Link> */}
       <CheckoutButtonReal />
-      {/* <Checkout /> */}
-      {/* <CheckoutButton /> */}
     </div>
   );
 }

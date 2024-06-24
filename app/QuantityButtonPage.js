@@ -5,10 +5,6 @@ import { createOrUpdateCookie } from './products/[productId]/action';
 export default function QuantityButtonPage({ productId }) {
   // State to manage the quantity of the product, default value 0
   const [quantity, setQuantity] = useState(1);
-  // const [quantityCookie, setQuantityCookie] = useState(0);
-
-  // State to add quantity to cart
-  //const [addQuantity, setAddQuantity] = useState(0);
 
   // Function to increment the quantity by 1
   const handleIncrement = () => {
@@ -31,12 +27,7 @@ export default function QuantityButtonPage({ productId }) {
   return (
     <div>
       <div>
-        <button
-          onClick={handleIncrement}
-          // formAction={async () => await createOrUpdateCookie(quantity)}
-        >
-          Add 1
-        </button>
+        <button onClick={handleIncrement}>Add 1</button>
         <input
           type="number"
           value={quantity}
@@ -44,11 +35,7 @@ export default function QuantityButtonPage({ productId }) {
           min="0"
           step="1"
         />
-        <button
-          onClick={handleAddToCart} // {async () => await createOrUpdateCookie(quantityCookie)}
-        >
-          Add to cart
-        </button>
+        <button onClick={handleAddToCart}>Add to cart</button>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './checkOut.module.scss';
 
 export default function CheckoutForm() {
@@ -221,20 +221,6 @@ export default function CheckoutForm() {
             type="button"
             onClick={clearAllInputFields}
             disabled={!isFormComplete}
-            // disabled={
-            //   !firstName ||
-            //   !lastName ||
-            //   !email ||
-            //   !country ||
-            //   !city ||
-            //   !zipCode ||
-            //   !street ||
-            //   !streetNumber ||
-            //   !doorNumber ||
-            //   !creditCardNumber ||
-            //   !cvvCode ||
-            //   !expiryDate
-            // }
           >
             Confirm Order
           </button>

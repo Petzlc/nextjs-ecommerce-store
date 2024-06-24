@@ -13,10 +13,10 @@ export default async function CheckoutPage() {
   const cartCookie = cookies().get('addQuantityCookie');
   const cartItems = cartCookie ? JSON.parse(cartCookie.value) : [];
 
-  // getting product details    // test
+  // getting product details
   const allProducts = await getProductsInsecure();
 
-  // getting the products in the cart   // test
+  // getting the products in the cart
   const productsInCart = cartItems.map((item) => {
     const product = allProducts.find((product) => product.id === item.id);
     return {
@@ -26,7 +26,7 @@ export default async function CheckoutPage() {
     };
   });
 
-  // total costs      // test
+  // total costs
   const totalPrice = productsInCart.reduce(
     (total, item) => total + item.totalPrice,
     0,
@@ -46,11 +46,7 @@ export default async function CheckoutPage() {
         <CheckoutForm />
       </div>
       <br />
-      {/* <div>
-        <Link href="/products">Keep shopping</Link>
-      </div> */}
       <br />
-      <div>{/* <h2>Total Price: {totalPrice.toFixed(2)}</h2> */}</div>
     </div>
   );
 }

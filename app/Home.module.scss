@@ -29,10 +29,6 @@
   margin-bottom: 40px;
 }
 
-// .sectionReverse {
-//   flex-direction: row-reverse;
-// }
-
 .imageContainerLeft {
   flex: 1;
   display: flex;
@@ -42,12 +38,6 @@
   margin-top: 100px;
 }
 
-// .image {
-//   width: 100%;
-//   height: auto;
-//   border-radius: 8px;
-//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-// }
 .imageContainerRight {
   flex: 1;
   display: flex;
@@ -68,6 +58,6 @@
 }
 
 .section:nth-child(3) .imageContainer {
-  justify-content: flex-end; /* Ändern Sie dies für das untere Bild zu 'flex-end' */
-  margin-left: 0px; /* Fügen Sie links Platz hinzu */
+  justify-content: flex-end;
+  margin-left: 0px;
 }

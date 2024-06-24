@@ -1,10 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-// import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products';
 import styles from './productsPage.module.scss';
-
-// import styles from '../page.module.scss';
 
 export const metadata = {
   title: 'Products',
@@ -47,37 +44,12 @@ export default async function ProductsPage() {
                 height="30"
               />
               <div className={styles.productDetails}>
-                {/* <p>
-                  <strong>Variety:</strong> {product.variety}
-                </p>
-                <hr />
                 <p>
-                  <strong>Type:</strong> {product.type}
-                </p>
-                <hr />
-                <p>
-                  <strong>Producer:</strong> {product.producer}
-                </p>
-                <hr />
-                <p>
-                  <strong>Region:</strong> {product.region}
-                </p>
-                <hr />
-                <p>
-                  <strong>Year:</strong> {product.year} {/* .getFullYear() */}
-                {/* </p>
-                <hr /> */}
-                {/* <p className={styles.productPrice}>
-                  <strong>Price:</strong>
-                  {product.price}
-                </p> */}
-                <p>
-                  <span className={styles.label}>Price:</span>{' '}
+                  <span className={styles.label}>Price:</span>
                   <span className={styles.labelPrice}>{product.price}</span>
                 </p>
-                {/* <hr className={styles.separator} /> */}
               </div>
-              {/* <hr className={styles.separator} /> */}
+
               <br></br>
               <div>
                 <hr
@@ -94,22 +66,5 @@ export default async function ProductsPage() {
         })}
       </div>
     </div>
-    // <div>
-    //   <h1>ProductsPage</h1>
-    //   <div className={styles.listProducts}>
-    //     <div className={styles.products}>
-    //       <p>Product 1</p>
-    //     </div>
-    //     <div className={styles.products}>
-    //       <p>Product 2</p>
-    //     </div>
-    //     <div className={styles.products}>
-    //       <p>Product 3</p>
-    //     </div>
-    //     <div className={styles.products}>
-    //       <p>Product 4</p>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
