@@ -1,14 +1,10 @@
 import Image from 'next/image';
-// import GenerateButton from './GenerateButton';
-// import LocalStorage from './LocalStorage';
 import React from 'react';
 import styles from './Home.module.scss';
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      {/* <GenerateButton /> */}
-      {/* <LocalStorage /> */}
       <h1 className={styles.title}>Natural Wine Store</h1>
       <div className={styles.intro}>
         <p>
